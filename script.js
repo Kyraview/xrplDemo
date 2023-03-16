@@ -89,6 +89,7 @@ async function send() {
 }
 
 async function signRaw() {
+  startLoading();
   const rawTxn = JSON.parse(document.getElementById("rawTxnInput").value)
   console.log(rawTxn);
   let response;
@@ -108,9 +109,11 @@ async function signRaw() {
     })
   }
   catch (e) {
+    stopLoading();
     alert("Failed malformed Transaction")
     return null;
   }
+  stopLoading();
   console.log(response)
   const signOutputHash = document.getElementById('signatureOutputHash');
   signOutputHash.innerHTML = "hash : " + response.hash.slice(0, 20) + "...";
