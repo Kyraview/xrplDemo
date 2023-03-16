@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/xrpl@2.0.0/build/xrpl-latest-min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>XRPL MetaMask Demo</h1>
+    <ul class="collapsible">
+      <li>
+        <div class="collapsible-header">Instructions</div>
+        <div class="collapsible-body">      
+          <ol>
+            <li>First make sure you have metamask flask and not normal metamask, this may require uninstalling normal metamask</li>
+            <li><a href="https://metamask.io/flask/">MetaMask Flask</a></li>
+            <li>then, click "Connect". This will install the snap</li>
+            <li>then get Address and fund the account at the</li>
+            <li>
+          <a href="https://yusufsahinhamza.github.io/xrp-testnet-faucet/">xrp testnet faucet</a>
+            </li>
+            <li>Snaps will work on the default version of metamask sometime in 2023</li>
+        
+          </ol>
+        </div>
+      </li>
+    </ul>
+    <a id="connectButton" class="waves-effect waves-light btn">connect</a>
+    <br />
+
+    <center>
+      <div id="loader" style="display:none" class="lds-ring2">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </center>
+    <div id="appScreen" style="display:none;" class="row">
+      <div class="col s12 m6">
+        <div class="card">
+          <p class="card-title">Account 1</p>
+          <div class="card-content">
+            <span id="addressDisplay"></span>
+            <br />
+            <label>
+              <input id="testnet" class="filled-in" checked="checked" type="checkbox" />
+              <span>TestNet</span>
+            </label>
+          </div>
+        </div>
+        <br />
+        <ul class="collapsible">
+          <li>
+            <div class="collapsible-header">Sign Transaction</div>
+            <div class="collapsible-body">
+              <textarea id="rawTxnInput" style="height:300px;" rows="15" cols="100">
+
+              </textarea>
+              <br>
+              <a id="signTxnButton" class="waves-effect waves-light btn">sign</a>
+              <p style="width: 75px;" id="signatureOutputHash"></p>
+              <p style="width: 75px;" id="signatureOutputBlob"></p>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Send XRP</div>
+            <div class="collapsible-body">
+              <input id="sendAddress" value="rPT1Sjq2YGrBMTttX4GZHjKu9dyfzbpAYe" placeholder="address" type="text"
+                class="validate">
+              <label for="sendAddress">Recepient Address</label>
+              <input id="sendAmount" type="number">
+              <label for="sendAmount">xrpl to send (drops)</label>
+              <br />
+              <a id="sendButton" class="waves-effect waves-light btn">send</a>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header">Get Balance</div>
+            <div class="collapsible-body">
+              <a id="getBalanceButton" class="waves-effect waves-light btn">getBalance</a>
+            </div>
+          </li>
+      </div>
+      <div class="col s12 m6">
+        <div style="height:400px;" class="card">
+          <span class="card-title">Transactions</span>
+          <div class="card-content" id="txnContainer">
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  </div>
+  <script src="subscribe.js"></script>
+  <script src="script.js"></script>
+  <script src="materialise.js"></script>
+  <script src="index_bundle.js"></script>
+  
+
+
+</body>
+
+</html>
