@@ -30,7 +30,7 @@ async function connect() {
     await subscribe();
   }
   finally {
-    const snapalgo = new SnapAlgo.Wallet();
+    //const snapalgo = new SnapAlgo.Wallet();
     stopLoading();
   }
 
